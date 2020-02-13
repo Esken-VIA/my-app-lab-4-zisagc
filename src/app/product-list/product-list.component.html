@@ -1,0 +1,41 @@
+<h2>Fucking Phone Products</h2>
+
+<div *ngFor="let product of products; index as productId">
+
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.numeration + ') ' + product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <p *ngIf="product.tag">
+    <p *ngFor="let item of product.tag">{{ item }}
+  </p>
+
+<!--
+  <button (click)="share()">
+  Share
+</button>
+-->
+<!--
+<a href="whatsapp://send" data-text="Take a look at this awesome website:" data-href="" class="wa_btn wa_btn_s" >Share1</a>
+-->
+
+<a [href]="'https://web.whatsapp.com/send?text='+'Take a look: '+product.link"  target="_blank"  rel="noopener noreferrer">
+  <button><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/WhatsApp_logo-color-vertical.svg/1024px-WhatsApp_logo-color-vertical.svg.png" class="btnImg">Share</button>
+</a>
+
+<a [href]="'https://t.me/share/url?url='+product.link"  target="_blank"  rel="noopener noreferrer" id="telega">
+  <button><img src="https://image.winudf.com/v2/image1/Y29tLndXaGF0c2FwcGpiXzg2MTY3NTRfaWNvbl8xNTUwNzI3OTE1XzA1OA/icon.png?w=170&fakeurl=1"  class="btnImg">Share</button>
+</a>
+<!--
+<app-product-alerts
+  [product]="product" 
+  (notify)="onNotify()">
+</app-product-alerts>
+-->
+</div>

@@ -1,0 +1,19 @@
+.mainImage{
+  width: 200px;
+}
+
+.secondImage, .thirdImage{
+  width: 100px;
+}
+
+#star{
+  display:inline-block;
+  width: 20px;
+  float:left;
+  padding-right:5px;
+}
+
+.mainImage, .imgIn{
+  display: inline-block;
+}
+
